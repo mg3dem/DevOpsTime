@@ -1,7 +1,5 @@
 package com.banasiak.android.devopstime;
 
-import org.w3c.dom.Text;
-
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,14 +8,12 @@ import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.wearable.view.WatchViewStub;
 import android.view.Display;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
