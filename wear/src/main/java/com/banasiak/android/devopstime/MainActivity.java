@@ -196,8 +196,6 @@ public class MainActivity extends Activity implements DisplayManager.DisplayList
         SimpleDateFormat datestampSdf = new SimpleDateFormat(DATESTAMP_FORMAT);
         datestampSdf.setTimeZone(tz);
         datestamp.setText(datestampSdf.format(date));
-
-        updateSeconds(date, tz);
     }
 
     private void updateSeconds(Date date, TimeZone tz) {

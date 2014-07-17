@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
-dependencies {
-    wearApp project(':wear')
-}
+//dependencies {
+//    wearApp project(':wear')
+//}
 
 android {
     compileSdkVersion 20
@@ -12,7 +12,7 @@ android {
         applicationId "com.banasiak.android.devopstime"
         minSdkVersion 18
         targetSdkVersion 20
-        versionCode 1
+        versionCode 2
         versionName "1.0"
     }
     buildTypes {
