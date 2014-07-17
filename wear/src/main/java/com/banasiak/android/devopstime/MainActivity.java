@@ -14,6 +14,7 @@ import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.format.DateFormat;
 import android.view.Display;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -29,7 +30,8 @@ public class MainActivity extends Activity implements DisplayManager.DisplayList
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private static final String TIME_FORMAT = "h:mm";
+    private static final String TIME_FORMAT_12 = "h:mm";
+    private static final String TIME_FORMAT_24 = "H:mm";
     private static final String PERIOD_FORMAT = "a";
     private static final String TIMEZONE_FORMAT = "zzz";
     private static final String DATESTAMP_FORMAT = "EEE, dd MMM yyyy";
@@ -180,7 +182,15 @@ public class MainActivity extends Activity implements DisplayManager.DisplayList
         Date date = new Date();
         TimeZone tz = TimeZone.getDefault();
 
-        SimpleDateFormat timeSdf = new SimpleDateFormat(TIME_FORMAT);
+        SimpleDateFormat timeSdf;
+        if(DateFormat.is24HourFormat(this)) {
+            timeSdf = new SimpleDateFormat(TIME_FORMAT_24);
+            period.setVisibility(View.INVISIBLE);
+        } else {
+            timeSdf = new SimpleDateFormat(TIME_FORMAT_12);
+            period.setVisibility(View.VISIBLE);
+        }
+
         timeSdf.setTimeZone(tz);
         time.setText(timeSdf.format(date));
 
@@ -198,6 +208,7 @@ public class MainActivity extends Activity implements DisplayManager.DisplayList
         datestamp.setText(datestampSdf.format(date));
     }
 
+    // this will be called by the runnable thread when the screen is awake
     private void updateSeconds(Date date, TimeZone tz) {
         SimpleDateFormat timestampSdf = new SimpleDateFormat(TIMESTAMP_FORMAT);
         timestampSdf.setTimeZone(tz);
