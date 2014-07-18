@@ -138,14 +138,14 @@ public class MainActivity extends Activity implements DisplayManager.DisplayList
     public void onScreenDim() {
         isDimmed = true;
 
-        int gray = getResources().getColor(R.color.gray);
+        int silver = getResources().getColor(R.color.silver);
         int black = getResources().getColor(R.color.black);
 
         main.setBackground(null);
         main.setBackgroundColor(black);
 
-        time.setTextColor(gray);
-        period.setTextColor(gray);
+        time.setTextColor(silver);
+        period.setTextColor(silver);
         timezone.setVisibility(View.INVISIBLE);
         datestamp.setVisibility(View.GONE);
         timestamp.setVisibility(View.GONE);
@@ -157,7 +157,6 @@ public class MainActivity extends Activity implements DisplayManager.DisplayList
         isDimmed = false;
 
         int white = getResources().getColor(R.color.white);
-        //int silver = getResources().getColor(R.color.silver);
 
         main.setBackground(getResources().getDrawable(R.drawable.kevlar));
 

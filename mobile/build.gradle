@@ -12,8 +12,8 @@ android {
         applicationId "com.banasiak.android.devopstime"
         minSdkVersion 18
         targetSdkVersion 20
-        versionCode 3
-        versionName "1.1"
+        versionCode 4
+        versionName "1.2"
     }
     buildTypes {
         release {
